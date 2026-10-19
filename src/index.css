@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html, body, #root {
+    @apply h-full w-full overflow-hidden;
+  }
+
+  body {
+    @apply bg-bg text-text font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-border rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-text-muted;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface rounded-card border border-border p-5;
+  }
+  
+  .btn {
+    @apply min-h-touch min-w-touch px-5 py-2.5 rounded-xl font-medium
+           transition-all duration-200 active:scale-95
+           flex items-center justify-center gap-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-accent hover:bg-accent-light text-white;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-surface-light hover:bg-border text-text;
+  }
+  
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-surface-light text-text-muted hover:text-text;
+  }
+  
+  .btn-danger {
+    @apply btn bg-danger/20 hover:bg-danger/30 text-danger;
+  }
+
+  .input {
+    @apply min-h-touch w-full px-4 py-2.5 rounded-xl
+           bg-surface-light border border-border
+           text-text placeholder:text-text-muted
+           focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent
+           transition-all duration-200;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: #2A2A38 transparent;
+  }
+}
