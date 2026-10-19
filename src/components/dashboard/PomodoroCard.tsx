@@ -192,24 +192,28 @@ export default function PomodoroCard() {
             </span>
           </div>
 
-          {/* Controls */}
-          <div className="flex items-center gap-3">
+          {/* Controls with generous touch-friendly spacing */}
+          <div className="flex items-center gap-4 mt-2">
             {!running ? (
-              <button onClick={handleStart} className="btn-primary !px-6">
+              <button onClick={handleStart} className="btn-primary !px-7 !py-2.5 shadow-lg shadow-accent/20">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M8 5v14l11-7z" />
                 </svg>
                 Start
               </button>
             ) : (
-              <button onClick={handlePause} className="btn-secondary !px-6">
+              <button onClick={handlePause} className="btn-secondary !px-7 !py-2.5">
                 <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z" />
                 </svg>
                 Pause
               </button>
             )}
-            <button onClick={handleReset} className="btn-ghost">
+            <button
+              onClick={handleReset}
+              className="w-12 h-12 rounded-xl bg-surface-light hover:bg-border text-text-muted hover:text-text flex items-center justify-center transition-all active:scale-95"
+              title="Reset Timer"
+            >
               <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
               </svg>

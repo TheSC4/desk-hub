@@ -105,7 +105,7 @@ export default function DeckList({
           <p className="text-sm text-text-muted">Master your GATE CSE core concepts with SM-2 scheduling</p>
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-4">
           <button onClick={onOpenSettings} className="btn-secondary !min-h-[44px] !px-4 text-xs font-medium">
             <svg className="w-4 h-4 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />

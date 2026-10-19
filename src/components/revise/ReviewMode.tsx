@@ -262,7 +262,7 @@ export default function ReviewMode({ session, onExit }: ReviewModeProps) {
             Show Answer (Space)
           </button>
         ) : (
-          <div className="grid grid-cols-4 gap-4 w-full max-w-3xl">
+          <div className="grid grid-cols-4 gap-5 w-full max-w-3xl px-2">
             {/* Again (1) */}
             <button
               onClick={() => handleRate(1)}
