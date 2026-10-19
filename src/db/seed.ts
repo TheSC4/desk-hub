@@ -46,4 +46,19 @@ export async function seedDatabase(): Promise<void> {
       sessionsBeforeLong: 4,
     });
   }
+
+  // Seed default virtual pet
+  const petCount = await db.pet.count();
+  if (petCount === 0) {
+    await db.pet.add({
+      name: 'Pixel',
+      type: 'owl',
+      level: 1,
+      xp: 25,
+      energy: 90,
+      happiness: 85,
+      lastInteracted: Date.now(),
+      totalStudyMinutes: 0,
+    });
+  }
 }

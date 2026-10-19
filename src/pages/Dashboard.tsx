@@ -2,7 +2,7 @@ import Header from '../components/dashboard/Header';
 import PomodoroCard from '../components/dashboard/PomodoroCard';
 import SyllabusCard from '../components/dashboard/SyllabusCard';
 import TargetsCard from '../components/dashboard/TargetsCard';
-import MediaCard from '../components/dashboard/MediaCard';
+import VirtualPetCard from '../components/dashboard/VirtualPetCard';
 
 interface DashboardProps {
   onNavigateRevise: () => void;
@@ -16,7 +16,7 @@ export default function Dashboard({ onNavigateRevise }: DashboardProps) {
         <PomodoroCard />
         <SyllabusCard />
         <TargetsCard />
-        <MediaCard />
+        <VirtualPetCard />
       </div>
     </div>
   );

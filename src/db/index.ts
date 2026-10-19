@@ -69,6 +69,20 @@ export interface PomodoroSettings {
   sessionsBeforeLong: number;
 }
 
+// ─── Virtual Pet types ───
+
+export interface PetState {
+  id?: number;
+  name: string;
+  type: 'dragon' | 'cat' | 'owl' | 'robot';
+  level: number;
+  xp: number;
+  energy: number;   // 0 - 100
+  happiness: number; // 0 - 100
+  lastInteracted: number;
+  totalStudyMinutes: number;
+}
+
 // ─── Database ───
 
 export class DeskHubDB extends Dexie {
@@ -79,6 +93,7 @@ export class DeskHubDB extends Dexie {
   topics!: EntityTable<Topic, 'id'>;
   dailyTargets!: EntityTable<DailyTarget, 'id'>;
   pomodoroSettings!: EntityTable<PomodoroSettings, 'id'>;
+  pet!: EntityTable<PetState, 'id'>;
 
   constructor() {
     super('DeskHubDB');
@@ -90,6 +105,9 @@ export class DeskHubDB extends Dexie {
       topics: '++id, subjectId, completed, order',
       dailyTargets: '++id, date, order',
       pomodoroSettings: '++id',
+    });
+    this.version(2).stores({
+      pet: '++id',
     });
   }
 }
